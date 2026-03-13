@@ -1,0 +1,221 @@
+body{
+font-family:'Segoe UI',sans-serif;
+margin:0;
+padding:0;
+}
+
+
+/* NAVBAR */
+
+.transparent-navbar{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+background:transparent;
+padding:15px 0;
+z-index:1000;
+}
+
+.transparent-navbar .nav-link{
+color:white !important;
+margin-left:20px;
+font-weight:500;
+}
+
+.transparent-navbar .nav-link:hover{
+color:#0d6efd !important;
+}
+
+
+/* HERO */
+
+.saas-hero{
+
+height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url("../images/background2.png");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+display:flex;
+align-items:center;
+
+color:white;
+}
+
+
+/* DASHBOARD CARDS */
+
+.dashboard-card{
+
+background:white;
+color:black;
+
+padding:20px;
+margin-bottom:20px;
+
+border-radius:10px;
+
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+
+animation:floatCard 4s ease-in-out infinite;
+}
+
+.dashboard-card:nth-child(2){
+animation-delay:1s;
+}
+
+.dashboard-card:nth-child(3){
+animation-delay:2s;
+}
+
+
+@keyframes floatCard{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
+
+}
+
+
+/* FEATURES */
+
+.features-section{
+padding:80px 0;
+background:#f8f9fa;
+}
+
+
+/* CLIENTS */
+
+.clients-section{
+padding:60px 0;
+background:white;
+}
+
+
+/* PRICING */
+
+.pricing-section{
+padding:80px 0;
+background:#f8f9fa;
+}
+
+
+/* CTA */
+
+.cta-section{
+background:#111;
+color:white;
+padding:80px 0;
+}
+
+
+/* FOOTER */
+
+.footer{
+background:black;
+color:white;
+text-align:center;
+padding:20px;
+}
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+}
+
+/* NAVBAR */
+
+.custom-navbar{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+background:transparent;
+padding:20px 0;
+z-index:1000;
+}
+
+.custom-navbar .nav-link{
+color:white !important;
+margin-left:20px;
+font-weight:500;
+}
+
+.custom-navbar .nav-link:hover{
+color:#0d6efd !important;
+}
+
+.navbar-brand{
+color:white !important;
+font-size:22px;
+}
+
+
+/* HERO SECTION */
+
+.hero{
+height:100vh;
+
+background:
+
+url("../images/background.png");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:center;
+text-align:center;
+
+color:white;
+}
+
+.hero-content{
+max-width:900px;
+margin:auto;
+}
+/* LOGO CIRCLE */
+
+.logo-circle{
+width:55px;
+height:55px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:2px solid white;
+
+background:white;
+
+padding:4px;
+}
+.topbar{
+background:#111;
+font-size:14px;
+}
+
+.topbar i{
+margin-right:5px;
+}
+.logo-circle{
+width:55px;
+height:55px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:2px solid white;
+
+background:white;
+
+padding:3px;
+}
