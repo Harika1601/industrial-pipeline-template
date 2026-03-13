@@ -1,39 +1,357 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Orders</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Orders Management | PipelineInspect</title>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* BODY */
+
+body{
+margin:0;
+font-family:Segoe UI;
+padding-top:90px;
+}
+
+/* BACKGROUND IMAGE */
+
+.bg-image{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-1;
+}
+
+
+/* NAVBAR */
+
+.transparent-navbar{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+background:transparent;
+padding:15px 0;
+z-index:1000;
+}
+
+/* LOGO */
+
+.logo-circle{
+width:45px;
+height:45px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid white;
+background:white;
+padding:3px;
+}
+
+/* BRAND TEXT */
+
+.brand-text{
+font-size:20px;
+font-weight:600;
+color:white;
+}
+
+/* NAV LINKS */
+
+.nav-link{
+color:white !important;
+margin-left:15px;
+font-weight:500;
+}
+
+.nav-link:hover{
+color:#0d6efd !important;
+}
+
+
+/* STATS CARDS */
+
+.stats-card{
+border:none;
+border-radius:12px;
+color:white;
+padding:25px;
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+transition:0.3s;
+}
+
+.stats-card:hover{
+transform:translateY(-6px);
+}
+
+.card-orders{
+background:linear-gradient(45deg,#007bff,#00c6ff);
+}
+
+.card-completed{
+background:linear-gradient(45deg,#28a745,#6dd5ed);
+}
+
+.card-pending{
+background:linear-gradient(45deg,#ff9800,#ffc107);
+}
+
+
+/* TABLE */
+
+.table{
+background:white;
+border-radius:10px;
+overflow:hidden;
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-<div class="container py-5">
+<!-- BACKGROUND IMAGE -->
 
-<h2>Orders / Bookings</h2>
+<img src="../assets/images/bg.jpg" class="bg-image">
 
-<table class="table table-striped">
 
-<tr>
-<th>Order ID</th>
-<th>Service</th>
-<th>Status</th>
-</tr>
+<!-- NAVBAR -->
 
-<tr>
-<td>1001</td>
-<td>Pipeline Inspection</td>
-<td>Completed</td>
-</tr>
+<nav class="navbar navbar-expand-lg transparent-navbar">
 
-<tr>
-<td>1002</td>
-<td>Integrity Assessment</td>
-<td>Pending</td>
-</tr>
+<div class="container">
 
-</table>
+<a class="navbar-brand d-flex align-items-center" href="dashboard.html">
+
+<img src="../assets/images/logo.png" class="logo-circle me-2">
+
+<span class="brand-text">PipelineInspect Admin</span>
+
+</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navMenu">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="dashboard.html">Dashboard</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link active" href="orders.html">Orders</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link btn btn-outline-light px-3 ms-3" href="../index.html">
+Logout
+</a>
+</li>
+
+</ul>
 
 </div>
 
+</div>
+
+</nav>
+
+
+
+<div class="container py-5">
+
+
+<!-- PAGE HEADER -->
+
+<h2 class="text-white">Orders / Service Bookings</h2>
+
+<p class="text-light">
+Monitor customer inspection bookings, update order status,
+and manage pipeline inspection services.
+</p>
+
+
+
+<!-- SEARCH BAR -->
+
+<div class="row mb-4">
+
+<div class="col-md-4">
+
+<input type="text" class="form-control"
+placeholder="Search Order ID or Customer">
+
+</div>
+
+</div>
+
+
+
+<!-- ORDER STATISTICS -->
+
+<div class="row g-4 mb-5">
+
+<div class="col-md-4">
+
+<div class="stats-card card-orders text-center">
+
+<i class="fa-solid fa-box fa-2x mb-2"></i>
+
+<h3>40</h3>
+
+<p>Total Orders</p>
+
+</div>
+
+</div>
+
+
+<div class="col-md-4">
+
+<div class="stats-card card-completed text-center">
+
+<i class="fa-solid fa-check-circle fa-2x mb-2"></i>
+
+<h3>28</h3>
+
+<p>Completed Orders</p>
+
+</div>
+
+</div>
+
+
+<div class="col-md-4">
+
+<div class="stats-card card-pending text-center">
+
+<i class="fa-solid fa-clock fa-2x mb-2"></i>
+
+<h3>12</h3>
+
+<p>Pending Orders</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ORDERS TABLE -->
+
+<h4 class="mb-3 text-white">Recent Service Orders</h4>
+
+<table class="table table-striped table-hover">
+
+<thead class="table-dark">
+
+<tr>
+<th>Order ID</th>
+<th>Customer</th>
+<th>Service</th>
+<th>Date</th>
+<th>Status</th>
+<th>Actions</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>#1001</td>
+<td>John Doe</td>
+<td>Pipeline Inspection</td>
+<td>12 Mar 2026</td>
+<td><span class="badge bg-success">Completed</span></td>
+<td>
+<button class="btn btn-sm btn-primary"><i class="fa-solid fa-eye"></i></button>
+<button class="btn btn-sm btn-warning"><i class="fa-solid fa-pen"></i></button>
+<button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>#1002</td>
+<td>Sarah Lee</td>
+<td>Integrity Assessment</td>
+<td>10 Mar 2026</td>
+<td><span class="badge bg-warning text-dark">Pending</span></td>
+<td>
+<button class="btn btn-sm btn-primary"><i class="fa-solid fa-eye"></i></button>
+<button class="btn btn-sm btn-warning"><i class="fa-solid fa-pen"></i></button>
+<button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>#1003</td>
+<td>Michael Chen</td>
+<td>Inspection Analytics</td>
+<td>08 Mar 2026</td>
+<td><span class="badge bg-info">Processing</span></td>
+<td>
+<button class="btn btn-sm btn-primary"><i class="fa-solid fa-eye"></i></button>
+<button class="btn btn-sm btn-warning"><i class="fa-solid fa-pen"></i></button>
+<button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
+</td>
+</tr>
+
+</tbody>
+
+</table>
+
+
+
+<!-- INFORMATION -->
+
+<div class="mt-5 p-4 bg-light rounded">
+
+<h4>Order Management</h4>
+
+<p>
+Administrators can review and manage all pipeline inspection
+service bookings from this panel. The dashboard helps track
+service progress, update order status, and ensure efficient
+inspection scheduling.
+</p>
+
+<ul>
+<li>Monitor service bookings from customers</li>
+<li>Update inspection service status</li>
+<li>Track pipeline inspection progress</li>
+<li>Manage inspection reports</li>
+</ul>
+
+</div>
+
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>
+

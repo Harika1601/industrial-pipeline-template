@@ -218,4 +218,25 @@ border:2px solid white;
 background:white;
 
 padding:3px;
+}/* Transparent Navbar */
+
+.transparent-navbar{
+background:transparent;
+position:absolute;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+}
+
+/* Logo Circle */
+
+.logo-circle{
+width:45px;
+height:45px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid white;
+background:white;
+padding:3px;
 }

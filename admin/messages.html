@@ -1,25 +1,314 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Messages</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Messages | PipelineInspect</title>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* BODY */
+
+body{
+margin:0;
+font-family:Segoe UI;
+padding-top:90px;
+}
+
+/* BACKGROUND IMAGE */
+
+.bg-image{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-1;
+}
+
+
+/* NAVBAR */
+
+.transparent-navbar{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+background:transparent;
+padding:15px 0;
+z-index:1000;
+}
+
+/* LOGO */
+
+.logo-circle{
+width:45px;
+height:45px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid white;
+background:white;
+padding:3px;
+}
+
+/* BRAND TEXT */
+
+.brand-text{
+font-size:20px;
+font-weight:600;
+color:white;
+}
+
+/* NAV LINKS */
+
+.nav-link{
+color:white !important;
+margin-left:15px;
+font-weight:500;
+}
+
+.nav-link:hover{
+color:#0d6efd !important;
+}
+
+
+/* MESSAGE CARDS */
+
+.message-card{
+border:none;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+transition:0.3s;
+background:white;
+}
+
+.message-card:hover{
+transform:translateY(-5px);
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-<div class="container py-5">
+<!-- BACKGROUND IMAGE -->
 
-<h2>Messages / Notifications</h2>
+<img src="../assets/images/bg.jpg" class="bg-image">
 
-<ul class="list-group">
 
-<li class="list-group-item">New contact form message</li>
-<li class="list-group-item">New booking received</li>
-<li class="list-group-item">System update available</li>
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg transparent-navbar">
+
+<div class="container">
+
+<a class="navbar-brand d-flex align-items-center" href="dashboard.html">
+
+<img src="../assets/images/logo.png" class="logo-circle me-2">
+
+<span class="brand-text">PipelineInspect Admin</span>
+
+</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navMenu">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="dashboard.html">Dashboard</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link active" href="messages.html">Messages</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link btn btn-outline-light px-3 ms-3" href="../index.html">
+Logout
+</a>
+</li>
 
 </ul>
 
 </div>
 
+</div>
+
+</nav>
+
+
+
+<div class="container py-5">
+
+
+<!-- PAGE HEADER -->
+
+<h2 class="mb-3 text-white">Messages & Notifications</h2>
+
+<p class="text-light">
+Monitor user inquiries, system notifications, and booking updates
+from the PipelineInspect platform.
+</p>
+
+
+
+<!-- MESSAGE CARDS -->
+
+<div class="row g-4 mt-3">
+
+
+<div class="col-md-4">
+
+<div class="card message-card p-4">
+
+<i class="fa-solid fa-envelope fa-2x text-primary mb-2"></i>
+
+<h5>New Contact Message</h5>
+
+<p>
+A new message has been submitted through
+the website contact form.
+</p>
+
+<span class="badge bg-primary">New</span>
+
+</div>
+
+</div>
+
+
+
+<div class="col-md-4">
+
+<div class="card message-card p-4">
+
+<i class="fa-solid fa-calendar-check fa-2x text-success mb-2"></i>
+
+<h5>New Booking Received</h5>
+
+<p>
+A customer has requested a new
+pipeline inspection service booking.
+</p>
+
+<span class="badge bg-success">Booking</span>
+
+</div>
+
+</div>
+
+
+
+<div class="col-md-4">
+
+<div class="card message-card p-4">
+
+<i class="fa-solid fa-bell fa-2x text-warning mb-2"></i>
+
+<h5>System Update</h5>
+
+<p>
+A platform update is available.
+Review system notifications for details.
+</p>
+
+<span class="badge bg-warning text-dark">Alert</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- RECENT NOTIFICATIONS -->
+
+<div class="mt-5">
+
+<h4 class="text-white">Recent Notifications</h4>
+
+<table class="table table-striped mt-3 bg-white">
+
+<thead class="table-dark">
+
+<tr>
+<th>Date</th>
+<th>Notification</th>
+<th>Status</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>12 Mar 2026</td>
+<td>Contact form message received</td>
+<td><span class="badge bg-primary">New</span></td>
+</tr>
+
+<tr>
+<td>11 Mar 2026</td>
+<td>Pipeline inspection booking submitted</td>
+<td><span class="badge bg-success">Processed</span></td>
+</tr>
+
+<tr>
+<td>10 Mar 2026</td>
+<td>System maintenance notification</td>
+<td><span class="badge bg-warning text-dark">Pending</span></td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+
+<!-- HELP SECTION -->
+
+<div class="mt-5 p-4 bg-light rounded">
+
+<h4>Message Management</h4>
+
+<p>
+Admin users can review customer inquiries, respond to
+service requests, and monitor system notifications
+through this messaging dashboard.
+</p>
+
+<a href="dashboard.html" class="btn btn-primary">
+Back to Dashboard
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>

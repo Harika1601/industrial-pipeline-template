@@ -1,25 +1,343 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>User Settings</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Account Settings | PipelineInspect</title>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* BODY */
+
+body{
+margin:0;
+font-family:Segoe UI;
+padding-top:90px;
+}
+
+/* BACKGROUND IMAGE */
+
+.bg-image{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-1;
+}
+
+
+/* TRANSPARENT NAVBAR */
+
+.transparent-navbar{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+background:transparent;
+padding:15px 0;
+z-index:1000;
+}
+
+
+/* LOGO */
+
+.logo-circle{
+width:45px;
+height:45px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid white;
+background:white;
+padding:3px;
+}
+
+
+/* BRAND TEXT */
+
+.brand-text{
+font-size:20px;
+font-weight:600;
+color:white;
+}
+
+
+/* NAV LINKS */
+
+.nav-link{
+color:white !important;
+margin-left:15px;
+font-weight:500;
+}
+
+.nav-link:hover{
+color:#0d6efd !important;
+}
+
+
+/* CARDS */
+
+.settings-card{
+border:none;
+border-radius:12px;
+box-shadow:0 6px 18px rgba(0,0,0,0.15);
+background:white;
+}
+
+
+/* HEADER */
+
+.page-header{
+background:#0d6efd;
+color:white;
+padding:30px;
+border-radius:10px;
+}
+
+</style>
+
 </head>
+
+
 
 <body>
 
+
+<!-- BACKGROUND IMAGE -->
+
+<img src="../assets/images/bg.jpg" class="bg-image">
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg transparent-navbar">
+
+<div class="container">
+
+<a class="navbar-brand d-flex align-items-center" href="../index.html">
+
+<img src="../assets/images/logo.png" class="logo-circle me-2">
+
+<span class="brand-text">PipelineInspect</span>
+
+</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navMenu">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="dashboard.html">Dashboard</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link active" href="settings.html">Settings</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link btn btn-outline-light px-3 ms-3" href="../index.html">
+Logout
+</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+
+
 <div class="container py-5">
 
-<h2>Account Settings</h2>
+
+<!-- PAGE HEADER -->
+
+<div class="page-header mb-4">
+
+<h2><i class="fa-solid fa-gear me-2"></i>Account Settings</h2>
+
+<p class="mb-0">
+Manage your password, notifications and security preferences.
+</p>
+
+</div>
+
+
+
+<div class="row g-4">
+
+
+<!-- PASSWORD SETTINGS -->
+
+<div class="col-md-6">
+
+<div class="card settings-card p-4">
+
+<h4 class="mb-3">
+<i class="fa-solid fa-lock text-primary me-2"></i>
+Change Password
+</h4>
 
 <form>
 
-<input class="form-control mb-3" placeholder="New Password">
+<input type="password" class="form-control mb-3" placeholder="Current Password">
 
-<button class="btn btn-primary">Update</button>
+<input type="password" class="form-control mb-3" placeholder="New Password">
+
+<input type="password" class="form-control mb-3" placeholder="Confirm New Password">
+
+<button class="btn btn-primary">
+Update Password
+</button>
 
 </form>
 
 </div>
 
+</div>
+
+
+
+<!-- NOTIFICATIONS -->
+
+<div class="col-md-6">
+
+<div class="card settings-card p-4">
+
+<h4 class="mb-3">
+<i class="fa-solid fa-bell text-warning me-2"></i>
+Notifications
+</h4>
+
+<div class="form-check mb-2">
+
+<input class="form-check-input" type="checkbox" checked>
+
+<label class="form-check-label">
+Email Notifications
+</label>
+
+</div>
+
+<div class="form-check mb-2">
+
+<input class="form-check-input" type="checkbox" checked>
+
+<label class="form-check-label">
+Inspection Report Alerts
+</label>
+
+</div>
+
+<div class="form-check mb-3">
+
+<input class="form-check-input" type="checkbox">
+
+<label class="form-check-label">
+Promotional Updates
+</label>
+
+</div>
+
+<button class="btn btn-success">
+Save Preferences
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- ACCOUNT STATUS -->
+
+<div class="col-md-6">
+
+<div class="card settings-card p-4">
+
+<h4 class="mb-3">
+<i class="fa-solid fa-user-shield text-success me-2"></i>
+Account Status
+</h4>
+
+<p>Your account information:</p>
+
+<ul>
+
+<li><strong>Account Type:</strong> Client</li>
+
+<li><strong>Member Since:</strong> January 2026</li>
+
+<li><strong>Status:</strong> Active</li>
+
+<li><strong>Last Login:</strong> Today</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+
+<!-- SECURITY INFO -->
+
+<div class="col-md-6">
+
+<div class="card settings-card p-4">
+
+<h4 class="mb-3">
+<i class="fa-solid fa-shield-halved text-danger me-2"></i>
+Security Tips
+</h4>
+
+<ul>
+
+<li>Use strong passwords</li>
+
+<li>Update passwords regularly</li>
+
+<li>Do not share login credentials</li>
+
+<li>Enable email alerts for account activity</li>
+
+</ul>
+
+<a href="../contact.html" class="btn btn-primary">
+Contact Support
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>
