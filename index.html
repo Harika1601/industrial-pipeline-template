@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
 
@@ -12,6 +11,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/rtl.css">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -61,11 +61,8 @@ background:#000 !important;
 <div class="container">
 
 <a class="navbar-brand d-flex align-items-center" href="#">
-
 <img src="assets/images/logo.png" class="logo-circle me-2">
-
 <span class="fw-bold text-white">PipelineInspect</span>
-
 </a>
 
 <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
@@ -113,6 +110,14 @@ background:#000 !important;
 <li class="nav-item ms-3">
 <button onclick="toggleDarkMode()" class="btn btn-outline-light">
 🌙
+</button>
+</li>
+
+<!-- RTL BUTTON -->
+
+<li class="nav-item ms-3">
+<button onclick="toggleRTL()" class="btn btn-outline-light">
+RTL
 </button>
 </li>
 
@@ -170,44 +175,30 @@ Get Consultation
 <div class="row text-center">
 
 <div class="col-md-4">
-
 <i class="fa-solid fa-microchip fa-3x mb-3"></i>
-
 <h4>Advanced Technology</h4>
-
 <p>
 Modern inline inspection tools detect corrosion,
 cracks and pipeline damage with high accuracy.
 </p>
-
 </div>
 
-
 <div class="col-md-4">
-
 <i class="fa-solid fa-user-tie fa-3x mb-3"></i>
-
 <h4>Expert Engineers</h4>
-
 <p>
 Highly skilled inspection engineers provide
 accurate pipeline integrity analysis.
 </p>
-
 </div>
 
-
 <div class="col-md-4">
-
 <i class="fa-solid fa-clock fa-3x mb-3"></i>
-
 <h4>Fast Reports</h4>
-
 <p>
 Automated inspection reports and analytics
 help companies make quick decisions.
 </p>
-
 </div>
 
 </div>
@@ -229,68 +220,42 @@ help companies make quick decisions.
 <div class="row">
 
 <div class="col-md-4">
-
 <div class="card shadow">
-
 <img src="assets/images/service1.png" class="card-img-top">
-
 <div class="card-body">
-
 <h5>Inline Inspection</h5>
-
 <p>
 Smart pigging inspection tools detect pipeline
 defects including corrosion and cracks.
 </p>
-
 </div>
-
 </div>
-
 </div>
-
 
 <div class="col-md-4">
-
 <div class="card shadow">
-
 <img src="assets/images/service2.png" class="card-img-top">
-
 <div class="card-body">
-
 <h5>Integrity Management</h5>
-
 <p>
 Advanced monitoring systems ensure
 pipeline safety and reliability.
 </p>
-
 </div>
-
 </div>
-
 </div>
-
 
 <div class="col-md-4">
-
 <div class="card shadow">
-
 <img src="assets/images/service3.png" class="card-img-top">
-
 <div class="card-body">
-
 <h5>Inspection Analytics</h5>
-
 <p>
 Advanced data dashboards provide
 real-time monitoring of pipeline performance.
 </p>
-
 </div>
-
 </div>
-
 </div>
 
 </div>
@@ -399,11 +364,21 @@ Contact Us
 
 <!-- FOOTER -->
 
+<!-- FOOTER -->
+
 <footer class="footer text-center">
 
 <div class="container">
 
 <p>© 2026 PipelineInspect | All Rights Reserved</p>
+
+<div class="mt-2">
+
+<a href="coming-soon.html" class="text-white me-3">Coming Soon</a>
+
+<a href="404.html" class="text-white">404 Page</a>
+
+</div>
 
 </div>
 
@@ -415,11 +390,27 @@ Contact Us
 
 <script>
 
-/* DARK MODE TOGGLE */
+/* DARK MODE */
 
 function toggleDarkMode(){
-
 document.body.classList.toggle("dark-mode");
+}
+
+/* RTL TOGGLE */
+
+function toggleRTL(){
+
+if(document.documentElement.dir === "rtl"){
+
+document.documentElement.dir = "ltr";
+document.documentElement.lang = "en";
+
+}else{
+
+document.documentElement.dir = "rtl";
+document.documentElement.lang = "ar";
+
+}
 
 }
 
@@ -427,4 +418,3 @@ document.body.classList.toggle("dark-mode");
 
 </body>
 </html>
-

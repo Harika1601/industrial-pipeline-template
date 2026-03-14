@@ -1,8 +1,108 @@
-body.rtl{
+/* GLOBAL RTL */
+
+html[dir="rtl"] body{
 direction: rtl;
 text-align: right;
 }
 
-.navbar{
+
+/* NAVBAR FIX */
+
+html[dir="rtl"] .navbar-nav{
+margin-right:auto !important;
+margin-left:0 !important;
+}
+
+html[dir="rtl"] .nav-link{
+margin-right:20px;
+margin-left:0;
+}
+
+
+/* BUTTON SPACING */
+
+html[dir="rtl"] .btn{
+margin-left:0;
+margin-right:10px;
+}
+
+
+/* HERO CONTENT */
+
+html[dir="rtl"] .hero{
+text-align:right;
+}
+
+html[dir="rtl"] .hero-content{
+margin-right:auto;
+margin-left:auto;
+}
+
+
+/* ICON SPACING */
+
+html[dir="rtl"] .topbar i{
+margin-left:5px;
+margin-right:0;
+}
+
+
+/* SERVICES / CARDS */
+
+html[dir="rtl"] .card-body{
+text-align:right;
+}
+
+
+/* FEATURES / SECTIONS */
+
+html[dir="rtl"] .features-section,
+html[dir="rtl"] .clients-section,
+html[dir="rtl"] .pricing-section,
+html[dir="rtl"] .cta-section{
+text-align:right;
+}
+
+
+/* DASHBOARD CARDS */
+
+html[dir="rtl"] .dashboard-card{
+text-align:right;
+}
+
+
+/* INDUSTRIES */
+
+html[dir="rtl"] .row{
 direction: rtl;
+}
+
+
+/* STATS */
+
+html[dir="rtl"] .stats-section{
+text-align:center;
+}
+
+
+/* FOOTER */
+
+html[dir="rtl"] .footer{
+text-align:center;
+}
+
+
+/* LOGO FIX */
+
+html[dir="rtl"] .logo-circle{
+margin-left:10px;
+margin-right:0;
+}
+
+
+/* NAVBAR BUTTONS */
+
+html[dir="rtl"] .navbar .btn{
+margin-right:15px;
+margin-left:0;
 }

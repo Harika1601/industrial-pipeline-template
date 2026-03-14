@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,17 +10,74 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<link rel="stylesheet" href="assets/css/style.css">
+<style>
+
+/* NAVBAR */
+
+.navbar{
+position:absolute;
+top:0;
+width:100%;
+z-index:1000;
+background:transparent;
+}
+
+.navbar .nav-link{
+color:white !important;
+font-weight:500;
+margin-left:10px;
+}
+
+.navbar-brand{
+color:white !important;
+font-weight:bold;
+}
+
+
+/* HERO BACKGROUND IMAGE */
+
+.hero{
+background-image:url("assets/images/bg.jpg");
+background-size:cover;
+background-position:center;
+height:400px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+position:relative;
+}
+
+/* BLACK OVERLAY */
+
+.hero::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+}
+
+/* HERO TEXT */
+
+.hero .container{
+position:relative;
+z-index:2;
+}
+
+</style>
 
 </head>
-
 
 <body>
 
 
 <!-- NAVBAR -->
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark">
 
 <div class="container">
 
@@ -29,11 +85,11 @@
 
 <img src="assets/images/logo.png" width="40" height="40" class="rounded-circle me-2">
 
-<span>PipelineInspect</span>
+PipelineInspect
 
 </a>
 
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
 <span class="navbar-toggler-icon"></span>
 </button>
 
@@ -69,7 +125,7 @@
 
 <!-- HERO -->
 
-<section class="bg-primary text-white text-center py-5">
+<section class="hero">
 
 <div class="container">
 
@@ -97,7 +153,6 @@ solutions for industrial pipeline infrastructure.
 <img src="assets/images/service1.png" class="img-fluid rounded">
 
 </div>
-
 
 <div class="col-md-6">
 
@@ -138,35 +193,23 @@ infrastructure.
 <div class="row text-center">
 
 <div class="col-md-3">
-
 <h5>1. Data Collection</h5>
-
 <p>Inspection tools collect pipeline condition data.</p>
-
 </div>
 
 <div class="col-md-3">
-
 <h5>2. Defect Detection</h5>
-
 <p>Advanced systems detect corrosion and leaks.</p>
-
 </div>
 
 <div class="col-md-3">
-
 <h5>3. Data Analysis</h5>
-
 <p>Engineers analyze inspection results.</p>
-
 </div>
 
 <div class="col-md-3">
-
 <h5>4. Maintenance Planning</h5>
-
 <p>Companies receive recommendations for repairs.</p>
-
 </div>
 
 </div>
@@ -186,27 +229,18 @@ infrastructure.
 <div class="row text-center">
 
 <div class="col-md-4">
-
 <h5>Improved Safety</h5>
-
 <p>Prevent accidents and pipeline failures.</p>
-
 </div>
 
 <div class="col-md-4">
-
 <h5>Cost Efficiency</h5>
-
 <p>Reduce expensive emergency repairs.</p>
-
 </div>
 
 <div class="col-md-4">
-
 <h5>Regulatory Compliance</h5>
-
 <p>Meet industry safety and inspection standards.</p>
-
 </div>
 
 </div>
@@ -252,5 +286,3 @@ Contact Us
 </body>
 
 </html>
-```
-
