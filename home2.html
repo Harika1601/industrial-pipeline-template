@@ -15,6 +15,50 @@
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+<style>
+
+/* DARK MODE */
+body.dark-mode{
+background:#121212;
+color:#fff;
+}
+
+body.dark-mode .navbar{
+background:#1e1e1e !important;
+}
+
+body.dark-mode .saas-hero{
+background:#1a1a1a;
+}
+
+body.dark-mode .dashboard-card,
+body.dark-mode .card{
+background:#2a2a2a;
+color:#fff;
+}
+
+body.dark-mode .features-section,
+body.dark-mode .clients-section,
+body.dark-mode .pricing-section,
+body.dark-mode .cta-section{
+background:#181818;
+}
+
+body.dark-mode .footer{
+background:#1e1e1e;
+}
+
+/* TOGGLE BUTTON */
+.theme-btn{
+cursor:pointer;
+border:none;
+background:none;
+color:white;
+font-size:20px;
+}
+
+</style>
+
 </head>
 
 
@@ -27,14 +71,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 <div class="container">
 
-<!-- LOGO + BRAND -->
-
 <a class="navbar-brand d-flex align-items-center" href="index.html">
-
 <img src="assets/images/logo.png" class="logo-circle me-2" alt="logo">
-
 <span class="fw-bold text-white">PipelineInspect</span>
-
 </a>
 
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
@@ -43,7 +82,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 <div class="collapse navbar-collapse" id="nav">
 
-<ul class="navbar-nav ms-auto">
+<ul class="navbar-nav ms-auto align-items-center">
 
 <li class="nav-item">
 <a class="nav-link text-white" href="index.html">Home</a>
@@ -63,6 +102,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 <li class="nav-item">
 <a class="nav-link text-white" href="contact.html">Contact</a>
+</li>
+
+<!-- 🌙 TOGGLE BUTTON -->
+<li class="nav-item ms-3">
+<button class="theme-btn" onclick="toggleTheme()">
+<i id="themeIcon" class="fa-solid fa-moon"></i>
+</button>
 </li>
 
 </ul>
@@ -106,35 +152,22 @@ Start Free Trial
 <div class="dashboard-wrapper">
 
 <div class="dashboard-card">
-
 <h5>Pipeline Health</h5>
-
 <div class="progress mt-2">
-
 <div class="progress-bar bg-success" style="width:80%">
 80%
 </div>
-
 </div>
-
 </div>
-
 
 <div class="dashboard-card">
-
 <h5>Alerts</h5>
-
 <p class="text-danger">⚠ Leak risk detected</p>
-
 </div>
 
-
 <div class="dashboard-card">
-
 <h5>Inspection Coverage</h5>
-
 <p>Monitoring 5200 km pipelines</p>
-
 </div>
 
 </div>
@@ -160,35 +193,21 @@ Start Free Trial
 <div class="row text-center">
 
 <div class="col-md-4">
-
 <i class="fa-solid fa-chart-line fa-3x text-primary mb-3"></i>
-
 <h5>Real-Time Monitoring</h5>
-
 <p>Track pipeline health using real-time analytics dashboards.</p>
-
 </div>
 
-
 <div class="col-md-4">
-
 <i class="fa-solid fa-shield-halved fa-3x text-primary mb-3"></i>
-
 <h5>Risk Detection</h5>
-
 <p>AI powered risk detection for corrosion and leaks.</p>
-
 </div>
 
-
 <div class="col-md-4">
-
 <i class="fa-solid fa-file-lines fa-3x text-primary mb-3"></i>
-
 <h5>Automated Reports</h5>
-
 <p>Generate inspection reports automatically.</p>
-
 </div>
 
 </div>
@@ -233,41 +252,27 @@ Start Free Trial
 <div class="row text-center">
 
 <div class="col-md-4">
-
 <div class="card p-4 shadow">
-
 <h4>Starter</h4>
 <h2>$29/mo</h2>
 <p>Basic monitoring features</p>
-
 </div>
-
 </div>
-
 
 <div class="col-md-4">
-
 <div class="card p-4 shadow border-primary">
-
 <h4>Professional</h4>
 <h2>$79/mo</h2>
 <p>Advanced analytics dashboard</p>
-
 </div>
-
 </div>
-
 
 <div class="col-md-4">
-
 <div class="card p-4 shadow">
-
 <h4>Enterprise</h4>
 <h2>$199/mo</h2>
 <p>Full pipeline monitoring suite</p>
-
 </div>
-
 </div>
 
 </div>
@@ -299,14 +304,52 @@ Create Account
 <!-- FOOTER -->
 
 <footer class="footer">
-
 <p>© 2026 PipelineInspect Platform</p>
-
 </footer>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-</body>
+<script>
 
+/* LOAD THEME */
+function loadTheme(){
+let saved = localStorage.getItem("theme");
+
+if(saved){
+document.body.classList.toggle("dark-mode", saved === "dark");
+}else if(window.matchMedia("(prefers-color-scheme: dark)").matches){
+document.body.classList.add("dark-mode");
+}
+
+updateIcon();
+}
+
+/* TOGGLE */
+function toggleTheme(){
+document.body.classList.toggle("dark-mode");
+
+let theme = document.body.classList.contains("dark-mode") ? "dark" : "light";
+localStorage.setItem("theme", theme);
+
+updateIcon();
+}
+
+/* ICON */
+function updateIcon(){
+let icon = document.getElementById("themeIcon");
+
+if(document.body.classList.contains("dark-mode")){
+icon.classList.replace("fa-moon","fa-sun");
+}else{
+icon.classList.replace("fa-sun","fa-moon");
+}
+}
+
+/* INIT */
+loadTheme();
+
+</script>
+
+</body>
 </html>

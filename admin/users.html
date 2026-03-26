@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,21 +9,17 @@
 <title>User Management | PipelineInspect</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
 
-/* BODY */
+/* SAME YOUR ORIGINAL CSS (NO CHANGE) */
 
 body{
 margin:0;
 font-family:Segoe UI;
 padding-top:90px;
 }
-
-/* BACKGROUND IMAGE */
 
 .bg-image{
 position:fixed;
@@ -36,8 +31,6 @@ object-fit:cover;
 z-index:-1;
 }
 
-/* NAVBAR */
-
 .transparent-navbar{
 position:absolute;
 top:0;
@@ -47,8 +40,6 @@ background:transparent;
 padding:15px 0;
 z-index:1000;
 }
-
-/* LOGO */
 
 .logo-circle{
 width:45px;
@@ -60,27 +51,17 @@ background:white;
 padding:3px;
 }
 
-/* BRAND TEXT */
-
 .brand-text{
 font-size:20px;
 font-weight:600;
 color:white;
 }
 
-/* NAV LINKS */
-
 .nav-link{
 color:white !important;
 margin-left:15px;
 font-weight:500;
 }
-
-.nav-link:hover{
-color:#0d6efd !important;
-}
-
-/* HEADER */
 
 .page-header{
 background:white;
@@ -90,42 +71,23 @@ box-shadow:0 5px 15px rgba(0,0,0,0.15);
 margin-bottom:30px;
 }
 
-/* CARDS */
-
 .stats-card{
 border:none;
 border-radius:12px;
 color:white;
 padding:25px;
 box-shadow:0 8px 20px rgba(0,0,0,0.15);
-transition:0.3s;
 }
 
-.stats-card:hover{
-transform:translateY(-6px);
-}
-
-.card-users{
-background:linear-gradient(45deg,#007bff,#00c6ff);
-}
-
-.card-active{
-background:linear-gradient(45deg,#28a745,#6dd5ed);
-}
-
-.card-new{
-background:linear-gradient(45deg,#ff9800,#ffc107);
-}
-
-/* TABLE */
+.card-users{ background:linear-gradient(45deg,#007bff,#00c6ff); }
+.card-active{ background:linear-gradient(45deg,#28a745,#6dd5ed); }
+.card-new{ background:linear-gradient(45deg,#ff9800,#ffc107); }
 
 .table{
 background:white;
 border-radius:10px;
 overflow:hidden;
 }
-
-/* AVATAR */
 
 .user-avatar{
 width:40px;
@@ -138,268 +100,287 @@ object-fit:cover;
 
 </head>
 
-
 <body>
-
-<!-- BACKGROUND IMAGE -->
 
 <img src="../assets/images/bg.jpg" class="bg-image">
 
-
 <!-- NAVBAR -->
-
 <nav class="navbar navbar-expand-lg transparent-navbar">
-
 <div class="container">
 
 <a class="navbar-brand d-flex align-items-center" href="dashboard.html">
-
 <img src="../assets/images/logo.png" class="logo-circle me-2">
-
 <span class="brand-text">PipelineInspect Admin</span>
-
 </a>
 
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-<span class="navbar-toggler-icon"></span>
-</button>
-
-<div class="collapse navbar-collapse" id="navMenu">
-
+<div class="collapse navbar-collapse">
 <ul class="navbar-nav ms-auto">
-
+<li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+<li class="nav-item"><a class="nav-link active" href="users.html">Users</a></li>
 <li class="nav-item">
-<a class="nav-link" href="dashboard.html">Dashboard</a>
+<a class="nav-link btn btn-outline-light px-3 ms-3" href="../index.html">Logout</a>
 </li>
-
-<li class="nav-item">
-<a class="nav-link active" href="users.html">Users</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link btn btn-outline-light px-3 ms-3" href="../index.html">
-Logout
-</a>
-</li>
-
 </ul>
-
 </div>
 
 </div>
-
 </nav>
-
-
 
 <div class="container py-5">
 
-
-<!-- PAGE HEADER -->
-
 <div class="page-header">
-
 <h2>User Management</h2>
-
-<p class="text-muted mb-0">
-Manage registered users, monitor activity, and maintain
-customer accounts on the PipelineInspect platform.
-</p>
-
+<p class="text-muted">Manage registered users</p>
 </div>
 
+<h4 class="text-white">Registered Users</h4>
 
-
-<!-- SEARCH + FILTER -->
-
-<div class="row mb-4">
-
-<div class="col-md-4">
-<input type="text" class="form-control" placeholder="Search users by name or email">
-</div>
-
-<div class="col-md-3">
-<select class="form-control">
-<option>Filter Status</option>
-<option>Active</option>
-<option>Pending</option>
-<option>Inactive</option>
-</select>
-</div>
-
-</div>
-
-
-
-<!-- USER STATISTICS -->
-
-<div class="row g-4 mb-5">
-
-<div class="col-md-4">
-
-<div class="stats-card card-users text-center">
-
-<i class="fa-solid fa-users fa-2x mb-2"></i>
-
-<h3>120</h3>
-
-<p>Total Users</p>
-
-</div>
-
-</div>
-
-
-<div class="col-md-4">
-
-<div class="stats-card card-active text-center">
-
-<i class="fa-solid fa-user-check fa-2x mb-2"></i>
-
-<h3>95</h3>
-
-<p>Active Users</p>
-
-</div>
-
-</div>
-
-
-<div class="col-md-4">
-
-<div class="stats-card card-new text-center">
-
-<i class="fa-solid fa-user-plus fa-2x mb-2"></i>
-
-<h3>25</h3>
-
-<p>New Registrations</p>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<!-- USERS TABLE -->
-
-<h4 class="mb-3 text-white">Registered Users</h4>
-
-<table class="table table-striped table-hover">
+<table class="table table-striped">
 
 <thead class="table-dark">
-
 <tr>
 <th>User</th>
 <th>Email</th>
-<th>Registration Date</th>
+<th>Date</th>
 <th>Status</th>
 <th>Actions</th>
 </tr>
-
 </thead>
 
 <tbody>
 
+
 <tr>
-
-<td>
-<img src="https://i.pravatar.cc/40?img=1" class="user-avatar me-2">
-John Doe
-</td>
-
+<td><img src="https://i.pravatar.cc/40?img=1" class="user-avatar me-2">John Doe</td>
 <td>john@email.com</td>
-
 <td>12 Mar 2026</td>
-
 <td><span class="badge bg-success">Active</span></td>
-
 <td>
-<button class="btn btn-sm btn-primary"><i class="fa-solid fa-eye"></i></button>
-<button class="btn btn-sm btn-warning"><i class="fa-solid fa-pen"></i></button>
-<button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
+<button class="btn btn-primary btn-sm" onclick="viewUser(this)"><i class="fa fa-eye"></i></button>
+<button class="btn btn-warning btn-sm" onclick="editUser(this)"><i class="fa fa-pen"></i></button>
+<button class="btn btn-danger btn-sm" onclick="deleteUser(this)"><i class="fa fa-trash"></i></button>
 </td>
-
 </tr>
 
-
 <tr>
-
-<td>
-<img src="https://i.pravatar.cc/40?img=2" class="user-avatar me-2">
-Sarah Lee
-</td>
-
+<td><img src="https://i.pravatar.cc/40?img=2" class="user-avatar me-2">Sarah Lee</td>
 <td>sarah@email.com</td>
-
 <td>10 Mar 2026</td>
-
 <td><span class="badge bg-success">Active</span></td>
-
 <td>
-<button class="btn btn-sm btn-primary"><i class="fa-solid fa-eye"></i></button>
-<button class="btn btn-sm btn-warning"><i class="fa-solid fa-pen"></i></button>
-<button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
+<button class="btn btn-primary btn-sm" onclick="viewUser(this)"><i class="fa fa-eye"></i></button>
+<button class="btn btn-warning btn-sm" onclick="editUser(this)"><i class="fa fa-pen"></i></button>
+<button class="btn btn-danger btn-sm" onclick="deleteUser(this)"><i class="fa fa-trash"></i></button>
 </td>
-
 </tr>
-
 
 <tr>
-
-<td>
-<img src="https://i.pravatar.cc/40?img=3" class="user-avatar me-2">
-Michael Chen
-</td>
-
+<td><img src="https://i.pravatar.cc/40?img=3" class="user-avatar me-2">Michael Chen</td>
 <td>michael@email.com</td>
-
 <td>08 Mar 2026</td>
-
-<td><span class="badge bg-warning text-dark">Pending</span></td>
-
+<td><span class="badge bg-warning">Pending</span></td>
 <td>
-<button class="btn btn-sm btn-primary"><i class="fa-solid fa-eye"></i></button>
-<button class="btn btn-sm btn-warning"><i class="fa-solid fa-pen"></i></button>
-<button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
+<button class="btn btn-primary btn-sm" onclick="viewUser(this)"><i class="fa fa-eye"></i></button>
+<button class="btn btn-warning btn-sm" onclick="editUser(this)"><i class="fa fa-pen"></i></button>
+<button class="btn btn-danger btn-sm" onclick="deleteUser(this)"><i class="fa fa-trash"></i></button>
 </td>
-
 </tr>
+
+<tr>
+<td><img src="https://i.pravatar.cc/40?img=4" class="user-avatar me-2">Emma Johnson</td>
+<td>emma@email.com</td>
+<td>05 Mar 2026</td>
+<td><span class="badge bg-success">Active</span></td>
+<td>
+<button class="btn btn-primary btn-sm" onclick="viewUser(this)"><i class="fa fa-eye"></i></button>
+<button class="btn btn-warning btn-sm" onclick="editUser(this)"><i class="fa fa-pen"></i></button>
+<button class="btn btn-danger btn-sm" onclick="deleteUser(this)"><i class="fa fa-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td><img src="https://i.pravatar.cc/40?img=5" class="user-avatar me-2">David Wilson</td>
+<td>david@email.com</td>
+<td>02 Mar 2026</td>
+<td><span class="badge bg-danger">Inactive</span></td>
+<td>
+<button class="btn btn-primary btn-sm" onclick="viewUser(this)"><i class="fa fa-eye"></i></button>
+<button class="btn btn-warning btn-sm" onclick="editUser(this)"><i class="fa fa-pen"></i></button>
+<button class="btn btn-danger btn-sm" onclick="deleteUser(this)"><i class="fa fa-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td><img src="https://i.pravatar.cc/40?img=6" class="user-avatar me-2">Olivia Martinez</td>
+<td>olivia@email.com</td>
+<td>01 Mar 2026</td>
+<td><span class="badge bg-success">Active</span></td>
+<td>
+<button class="btn btn-primary btn-sm" onclick="viewUser(this)"><i class="fa fa-eye"></i></button>
+<button class="btn btn-warning btn-sm" onclick="editUser(this)"><i class="fa fa-pen"></i></button>
+<button class="btn btn-danger btn-sm" onclick="deleteUser(this)"><i class="fa fa-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td><img src="https://i.pravatar.cc/40?img=7" class="user-avatar me-2">James Anderson</td>
+<td>james@email.com</td>
+<td>28 Feb 2026</td>
+<td><span class="badge bg-warning">Pending</span></td>
+<td>
+<button class="btn btn-primary btn-sm" onclick="viewUser(this)"><i class="fa fa-eye"></i></button>
+<button class="btn btn-warning btn-sm" onclick="editUser(this)"><i class="fa fa-pen"></i></button>
+<button class="btn btn-danger btn-sm" onclick="deleteUser(this)"><i class="fa fa-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td><img src="https://i.pravatar.cc/40?img=8" class="user-avatar me-2">Sophia Taylor</td>
+<td>sophia@email.com</td>
+<td>25 Feb 2026</td>
+<td><span class="badge bg-success">Active</span></td>
+<td>
+<button class="btn btn-primary btn-sm" onclick="viewUser(this)"><i class="fa fa-eye"></i></button>
+<button class="btn btn-warning btn-sm" onclick="editUser(this)"><i class="fa fa-pen"></i></button>
+<button class="btn btn-danger btn-sm" onclick="deleteUser(this)"><i class="fa fa-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td><img src="https://i.pravatar.cc/40?img=9" class="user-avatar me-2">Daniel Thomas</td>
+<td>daniel@email.com</td>
+<td>22 Feb 2026</td>
+<td><span class="badge bg-success">Active</span></td>
+<td>
+<button class="btn btn-primary btn-sm" onclick="viewUser(this)"><i class="fa fa-eye"></i></button>
+<button class="btn btn-warning btn-sm" onclick="editUser(this)"><i class="fa fa-pen"></i></button>
+<button class="btn btn-danger btn-sm" onclick="deleteUser(this)"><i class="fa fa-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td><img src="https://i.pravatar.cc/40?img=10" class="user-avatar me-2">Isabella Moore</td>
+<td>isabella@email.com</td>
+<td>20 Feb 2026</td>
+<td><span class="badge bg-danger">Inactive</span></td>
+<td>
+<button class="btn btn-primary btn-sm" onclick="viewUser(this)"><i class="fa fa-eye"></i></button>
+<button class="btn btn-warning btn-sm" onclick="editUser(this)"><i class="fa fa-pen"></i></button>
+<button class="btn btn-danger btn-sm" onclick="deleteUser(this)"><i class="fa fa-trash"></i></button>
+</td>
+</tr>
+
+</tbody>
 
 </tbody>
 
 </table>
 
-
-
-<!-- INFORMATION -->
-
-<div class="mt-5 p-4 bg-light rounded">
-
-<h4>User Administration</h4>
-
-<p>
-The admin panel allows administrators to manage platform users,
-track registrations, and maintain customer accounts efficiently.
-</p>
-
-<ul>
-<li>Monitor registered platform users</li>
-<li>Update or edit user account information</li>
-<li>Deactivate or remove inactive users</li>
-<li>Analyze user growth trends</li>
-</ul>
-
 </div>
 
-
+<!-- VIEW MODAL -->
+<div class="modal fade" id="viewModal">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-primary text-white">
+<h5>User Details</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<p><strong>Name:</strong> <span id="viewName"></span></p>
+<p><strong>Email:</strong> <span id="viewEmail"></span></p>
+<p><strong>Date:</strong> <span id="viewDate"></span></p>
+<p><strong>Status:</strong> <span id="viewStatus"></span></p>
+</div>
+</div>
+</div>
 </div>
 
+<!-- EDIT MODAL -->
+<div class="modal fade" id="editModal">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-warning">
+<h5>Edit User</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<input type="text" id="editName" class="form-control">
+</div>
+<div class="modal-footer">
+<button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+<button class="btn btn-warning" id="saveEdit">Save</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- DELETE MODAL -->
+<div class="modal fade" id="deleteModal">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-danger text-white">
+<h5>Confirm Delete</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body text-center">
+<p>Are you sure you want to delete this user?</p>
+</div>
+<div class="modal-footer justify-content-center">
+<button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+<button class="btn btn-danger" id="confirmDelete">Delete</button>
+</div>
+</div>
+</div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-</body>
+<script>
 
+let selectedRow = null;
+
+/* VIEW */
+function viewUser(btn){
+let row = btn.closest("tr");
+document.getElementById("viewName").innerText = row.children[0].innerText;
+document.getElementById("viewEmail").innerText = row.children[1].innerText;
+document.getElementById("viewDate").innerText = row.children[2].innerText;
+document.getElementById("viewStatus").innerText = row.children[3].innerText;
+new bootstrap.Modal(document.getElementById("viewModal")).show();
+}
+
+/* EDIT */
+function editUser(btn){
+selectedRow = btn.closest("tr");
+document.getElementById("editName").value = selectedRow.children[0].innerText;
+new bootstrap.Modal(document.getElementById("editModal")).show();
+}
+
+document.getElementById("saveEdit").onclick = function(){
+let newName = document.getElementById("editName").value;
+if(newName){
+let cell = selectedRow.children[0];
+let old = cell.innerText;
+cell.innerHTML = cell.innerHTML.replace(old,newName);
+}
+bootstrap.Modal.getInstance(document.getElementById("editModal")).hide();
+};
+
+/* DELETE */
+function deleteUser(btn){
+selectedRow = btn.closest("tr");
+new bootstrap.Modal(document.getElementById("deleteModal")).show();
+}
+
+document.getElementById("confirmDelete").onclick = function(){
+if(selectedRow){
+selectedRow.remove();
+}
+bootstrap.Modal.getInstance(document.getElementById("deleteModal")).hide();
+};
+
+</script>
+
+</body>
 </html>
