@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,15 +16,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 <style>
 
 /* BODY */
-
 body{
 margin:0;
 font-family:Segoe UI;
-padding-top:90px;
 }
 
 /* BACKGROUND IMAGE */
-
 .bg-image{
 position:fixed;
 top:0;
@@ -36,9 +32,37 @@ object-fit:cover;
 z-index:-1;
 }
 
+/* SIDEBAR */
+.sidebar{
+height:100vh;
+background:linear-gradient(180deg,#0d6efd,#0056d2);
+color:white;
+padding-top:30px;
+position:fixed;
+width:230px;
+}
 
-/* TRANSPARENT NAVBAR */
+.sidebar a{
+color:white;
+text-decoration:none;
+display:block;
+padding:12px 20px;
+margin:5px 10px;
+border-radius:6px;
+}
 
+.sidebar a:hover{
+background:rgba(255,255,255,0.2);
+}
+
+/* MAIN CONTENT */
+.main-content{
+margin-left:230px;
+padding:30px;
+min-height:100vh;
+}
+
+/* NAVBAR */
 .transparent-navbar{
 position:absolute;
 top:0;
@@ -49,9 +73,7 @@ padding:15px 0;
 z-index:1000;
 }
 
-
 /* LOGO */
-
 .logo-circle{
 width:45px;
 height:45px;
@@ -62,18 +84,14 @@ background:white;
 padding:3px;
 }
 
-
-/* BRAND TEXT */
-
+/* BRAND */
 .brand-text{
 font-size:20px;
 font-weight:600;
 color:white;
 }
 
-
 /* NAV LINKS */
-
 .nav-link{
 color:white !important;
 margin-left:15px;
@@ -84,9 +102,7 @@ font-weight:500;
 color:#0d6efd !important;
 }
 
-
 /* SERVICE CARDS */
-
 .service-card{
 border:none;
 border-radius:12px;
@@ -109,26 +125,34 @@ border-radius:12px 12px 0 0;
 
 </head>
 
-
 <body>
 
+<!-- SIDEBAR -->
+<div class="sidebar">
 
-<!-- BACKGROUND IMAGE -->
+<h4 class="text-center mb-4">
+<i class="fa-solid fa-user"></i> User Panel
+</h4>
 
+<a href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+<a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+<a href="orders.html"><i class="fa-solid fa-box"></i> Orders</a>
+<a href="saved.html"><i class="fa-solid fa-heart"></i> Saved Items</a>
+<a href="messages.html"><i class="fa-solid fa-envelope"></i> Messages</a>
+<a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
+<a href="../index.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+
+</div>
+
+<!-- BACKGROUND -->
 <img src="../assets/images/bg.jpg" class="bg-image">
 
-
 <!-- NAVBAR -->
-
 <nav class="navbar navbar-expand-lg transparent-navbar">
 
 <div class="container">
 
 <a class="navbar-brand d-flex align-items-center" href="../index.html">
-
-<img src="../assets/images/logo.png" class="logo-circle me-2">
-
-<span class="brand-text">PipelineInspect</span>
 
 </a>
 
@@ -149,9 +173,7 @@ border-radius:12px 12px 0 0;
 </li>
 
 <li class="nav-item">
-<a class="nav-link btn btn-outline-light px-3 ms-3" href="../index.html">
-Logout
-</a>
+<a class="nav-link btn btn-outline-light px-3 ms-3" href="../index.html">Logout</a>
 </li>
 
 </ul>
@@ -162,13 +184,12 @@ Logout
 
 </nav>
 
-
+<!-- MAIN CONTENT -->
+<div class="main-content">
 
 <div class="container py-5">
 
-
 <!-- PAGE HEADER -->
-
 <h2 class="mb-2 text-white">Saved Services</h2>
 
 <p class="text-light">
@@ -176,17 +197,11 @@ Your saved pipeline inspection services appear here.
 You can quickly access them when scheduling new inspections.
 </p>
 
-
-
 <!-- SERVICES -->
-
 <div class="row g-4 mt-3">
 
-
 <!-- SERVICE 1 -->
-
 <div class="col-md-6">
-
 <div class="card service-card">
 
 <img src="../assets/images/service1.png" class="service-img">
@@ -207,33 +222,17 @@ in pipelines.
 <span class="badge bg-success mb-3">Recommended Service</span>
 
 <div>
-
-<a href="../services.html" class="btn btn-primary btn-sm me-2">
-View Service
-</a>
-
-<button class="btn btn-outline-danger btn-sm me-2">
-Remove
-</button>
-
-<button class="btn btn-success btn-sm">
-Book Again
-</button>
-
+<a href="../services.html" class="btn btn-primary btn-sm me-2">View Service</a>
+<button class="btn btn-outline-danger btn-sm me-2">Remove</button>
+<button class="btn btn-success btn-sm">Book Again</button>
 </div>
 
 </div>
-
 </div>
-
 </div>
-
-
 
 <!-- SERVICE 2 -->
-
 <div class="col-md-6">
-
 <div class="card service-card">
 
 <img src="../assets/images/service2.png" class="service-img">
@@ -253,34 +252,18 @@ health, detect risks and improve operational safety.
 <span class="badge bg-info mb-3">Popular Service</span>
 
 <div>
+<a href="../services.html" class="btn btn-primary btn-sm me-2">View Service</a>
+<button class="btn btn-outline-danger btn-sm me-2">Remove</button>
+<button class="btn btn-success btn-sm">Book Again</button>
+</div>
 
-<a href="../services.html" class="btn btn-primary btn-sm me-2">
-View Service
-</a>
-
-<button class="btn btn-outline-danger btn-sm me-2">
-Remove
-</button>
-
-<button class="btn btn-success btn-sm">
-Book Again
-</button>
-
+</div>
+</div>
 </div>
 
 </div>
 
-</div>
-
-</div>
-
-
-</div>
-
-
-
-<!-- INFORMATION SECTION -->
-
+<!-- INFO SECTION -->
 <div class="mt-5 p-4 bg-light rounded">
 
 <h4>Why Save Services?</h4>
@@ -293,26 +276,18 @@ pipeline inspections.
 </p>
 
 <ul>
-
 <li>Quick access to frequently used inspection services</li>
-
 <li>Faster service booking</li>
-
 <li>Better service management</li>
-
 <li>Improved workflow efficiency</li>
-
 </ul>
 
 </div>
 
-
 </div>
-
-
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
-
 </html>

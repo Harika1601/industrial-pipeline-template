@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,22 +9,20 @@
 <title>Admin Settings | PipelineInspect</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
 /* BODY */
-
 body{
 margin:0;
 font-family:Segoe UI;
-padding-top:90px;
+height:100vh;
+overflow:hidden;
 }
 
-/* BACKGROUND IMAGE */
-
+/* BACKGROUND */
 .bg-image{
 position:fixed;
 top:0;
@@ -36,9 +33,7 @@ object-fit:cover;
 z-index:-1;
 }
 
-
 /* NAVBAR */
-
 .transparent-navbar{
 position:absolute;
 top:0;
@@ -50,7 +45,6 @@ z-index:1000;
 }
 
 /* LOGO */
-
 .logo-circle{
 width:45px;
 height:45px;
@@ -61,15 +55,11 @@ background:white;
 padding:3px;
 }
 
-/* BRAND */
-
 .brand-text{
 font-size:20px;
 font-weight:600;
 color:white;
 }
-
-/* NAV LINKS */
 
 .nav-link{
 color:white !important;
@@ -77,13 +67,46 @@ margin-left:15px;
 font-weight:500;
 }
 
-.nav-link:hover{
-color:#0d6efd !important;
+/* SIDEBAR (COPIED) */
+.sidebar{
+width:230px;
+height:100vh;
+background:#347dc6;
+padding:15px;
+position:fixed;
+margin-top:20px;
 }
 
+.sidebar h4{
+color:white;
+margin-bottom:20px;
+font-size:20px;
+}
+
+.sidebar a{
+display:block;
+color:white;
+padding:10px;
+text-decoration:none;
+border-radius:6px;
+margin-bottom:5px;
+font-size:14px;
+}
+
+.sidebar a:hover{
+background:#0d6efd;
+}
+
+/* MAIN CONTENT */
+.main-content{
+margin-left:230px;
+margin-top:70px;
+height:calc(100vh - 70px);
+padding:20px;
+overflow:auto;
+}
 
 /* SETTINGS CARDS */
-
 .settings-card{
 border:none;
 border-radius:12px;
@@ -95,79 +118,57 @@ background:white;
 
 </head>
 
-
 <body>
-
-
-<!-- BACKGROUND IMAGE -->
 
 <img src="../assets/images/bg.jpg" class="bg-image">
 
-
 <!-- NAVBAR -->
-
 <nav class="navbar navbar-expand-lg transparent-navbar">
-
 <div class="container">
 
 <a class="navbar-brand d-flex align-items-center" href="dashboard.html">
-
 <img src="../assets/images/logo.png" class="logo-circle me-2">
-
 <span class="brand-text">PipelineInspect Admin</span>
-
 </a>
-
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-<span class="navbar-toggler-icon"></span>
-</button>
-
-<div class="collapse navbar-collapse" id="navMenu">
 
 <ul class="navbar-nav ms-auto">
-
 <li class="nav-item">
-<a class="nav-link" href="dashboard.html">Dashboard</a>
+<a class="nav-link btn btn-outline-light px-3" href="../index.html">Logout</a>
 </li>
-
-<li class="nav-item">
-<a class="nav-link active" href="settings.html">Settings</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link btn btn-outline-light px-3 ms-3" href="../index.html">
-Logout
-</a>
-</li>
-
 </ul>
 
 </div>
+</nav>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+<h4><i class="fa-solid fa-chart-line"></i> Admin Panel</h4>
+
+<a href="dashboard.html"><i class="fa-solid fa-gauge"></i> Overview</a>
+<a href="users.html"><i class="fa-solid fa-users"></i> Users</a>
+<a href="orders.html"><i class="fa-solid fa-box"></i> Orders</a>
+<a href="messages.html"><i class="fa-solid fa-envelope"></i> Messages</a>
+<a href="reports.html"><i class="fa-solid fa-chart-pie"></i> Reports</a>
+<a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
+<a href="../index.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
 
 </div>
 
-</nav>
+<!-- MAIN CONTENT -->
+<div class="main-content">
 
-
-
-<div class="container py-5">
-
-<h2 class="mb-2 text-white">Admin Settings</h2>
+<h2 class="text-white">Admin Settings</h2>
 
 <p class="text-light">
 Configure website settings, manage administrator information,
 and control system preferences.
 </p>
 
-
-
 <div class="row g-4 mt-3">
 
-
 <!-- SITE SETTINGS -->
-
 <div class="col-md-6">
-
 <div class="card settings-card p-4">
 
 <h4 class="mb-3">
@@ -176,7 +177,6 @@ Website Configuration
 </h4>
 
 <form>
-
 <label class="form-label">Site Name</label>
 <input class="form-control mb-3" placeholder="PipelineInspect">
 
@@ -186,22 +186,14 @@ Website Configuration
 <label class="form-label">Support Phone</label>
 <input class="form-control mb-3" placeholder="+91 9876543210">
 
-<button class="btn btn-primary">
-Save Settings
-</button>
-
+<button class="btn btn-primary">Save Settings</button>
 </form>
 
 </div>
-
 </div>
 
-
-
-<!-- SECURITY SETTINGS -->
-
+<!-- SECURITY -->
 <div class="col-md-6">
-
 <div class="card settings-card p-4">
 
 <h4 class="mb-3">
@@ -210,29 +202,20 @@ Security Settings
 </h4>
 
 <form>
-
 <label class="form-label">Change Admin Password</label>
 <input type="password" class="form-control mb-3" placeholder="New Password">
 
 <label class="form-label">Confirm Password</label>
 <input type="password" class="form-control mb-3" placeholder="Confirm Password">
 
-<button class="btn btn-danger">
-Update Password
-</button>
-
+<button class="btn btn-danger">Update Password</button>
 </form>
 
 </div>
-
 </div>
 
-
-
 <!-- NOTIFICATIONS -->
-
 <div class="col-md-6">
-
 <div class="card settings-card p-4">
 
 <h4 class="mb-3">
@@ -242,39 +225,26 @@ Notification Preferences
 
 <div class="form-check mb-2">
 <input class="form-check-input" type="checkbox" checked>
-<label class="form-check-label">
-Email Notifications
-</label>
+<label class="form-check-label">Email Notifications</label>
 </div>
 
 <div class="form-check mb-2">
 <input class="form-check-input" type="checkbox" checked>
-<label class="form-check-label">
-Order Alerts
-</label>
+<label class="form-check-label">Order Alerts</label>
 </div>
 
 <div class="form-check mb-3">
 <input class="form-check-input" type="checkbox">
-<label class="form-check-label">
-System Updates
-</label>
+<label class="form-check-label">System Updates</label>
 </div>
 
-<button class="btn btn-success">
-Save Preferences
-</button>
+<button class="btn btn-success">Save Preferences</button>
 
 </div>
-
 </div>
 
-
-
-<!-- SYSTEM INFO -->
-
+<!-- INFO -->
 <div class="col-md-6">
-
 <div class="card settings-card p-4">
 
 <h4 class="mb-3">
@@ -289,29 +259,20 @@ the PipelineInspect platform efficiently.
 </p>
 
 <ul>
-
 <li>Manage website information</li>
 <li>Update administrator credentials</li>
 <li>Control notification preferences</li>
 <li>Monitor system configuration</li>
-
 </ul>
 
 </div>
+</div>
 
 </div>
 
-
 </div>
-
-
-</div>
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
-
 </html>
-

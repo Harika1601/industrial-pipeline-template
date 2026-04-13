@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
 
@@ -10,35 +10,74 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/rtl.css">
+
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
-/* NAVBAR */
+/* HEADER SPACE FIX */
+body{
+  padding-top:80px;
+}
 
+/* WHITE HEADER */
 .navbar{
-background:transparent;
-position:absolute;
-top:0;
-width:100%;
-z-index:1000;
+  background:#ffffff !important;
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
 }
 
+/* NAV SPACING */
+.navbar-nav{
+  gap:20px;
+}
+.navbar-nav .nav-item{
+  margin:0 10px;
+}
+
+/* NAV LINKS */
 .navbar .nav-link{
-color:white !important;
-font-weight:500;
-margin-left:12px;
+  color:#333 !important;
+  font-weight:500;
 }
 
-.navbar-brand{
-color:white !important;
-font-weight:bold;
+/* HOVER */
+.navbar .nav-link:hover{
+  color:#0d6efd !important;
 }
 
+/* ACTIVE PAGE */
+.navbar .nav-link.active{
+  color:#0d6efd !important;
+  font-weight:600;
+}
 
-/* HERO BACKGROUND IMAGE */
+/* CLICK FIX */
+.navbar .nav-link:focus,
+.navbar .nav-link:active{
+  color:#333 !important;
+  background:transparent !important;
+  outline:none;
+  box-shadow:none;
+}
 
+/* DARK MODE */
+body.dark-mode{
+  background:#121212;
+  color:#fff;
+}
+
+body.dark-mode .navbar{
+  background:#1a1a1a !important;
+}
+
+body.dark-mode .navbar .nav-link{
+  color:#ddd !important;
+}
+
+/* HERO */
 .hero{
 background-image:url("assets/images/bg.jpg");
 background-size:cover;
@@ -53,7 +92,6 @@ position:relative;
 }
 
 /* DARK OVERLAY */
-
 .hero::before{
 content:"";
 position:absolute;
@@ -69,60 +107,94 @@ position:relative;
 z-index:2;
 }
 
+/* ✅ FOOTER FIX */
+.footer a{
+  color:#ffffff !important;
+  text-decoration:none !important;
+}
+
+.footer a:hover{
+  color:#cccccc !important;
+  text-decoration:none !important;
+}
+
+.footer a:focus,
+.footer a:active{
+  color:#ffffff !important;
+  text-decoration:none !important;
+}
+
+/* ICON COLOR */
+.footer-icon{
+  color:#ffffff !important;
+}
+
+.footer-icon:hover{
+  color:#cccccc !important;
+}
+
 </style>
 
 </head>
 
-
 <body>
 
+<!-- HEADER -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
 
-<!-- NAVBAR -->
+    <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+      <img src="assets/images/logo.png" width="40" class="me-2">
+      PipelineInspect
+    </a>
 
-<nav class="navbar navbar-expand-lg navbar-dark">
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<div class="container">
+    <div class="collapse navbar-collapse" id="nav">
 
-<a class="navbar-brand d-flex align-items-center" href="index.html">
+      <ul class="navbar-nav mx-auto">
 
-<img src="assets/images/logo.png" width="40" height="40" class="rounded-circle me-2">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            Home
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+            <li><a class="dropdown-item" href="home2.html">Home 2</a></li>
+          </ul>
+        </li>
 
-PipelineInspect
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
 
-</a>
+      </ul>
 
-<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-<span class="navbar-toggler-icon"></span>
-</button>
+      <div class="d-flex align-items-center gap-2">
 
-<div class="collapse navbar-collapse" id="menu">
+        <button onclick="toggleRTL()" class="btn btn-outline-secondary btn-sm">
+          RTL
+        </button>
 
-<ul class="navbar-nav ms-auto">
+        <button onclick="toggleTheme()" class="btn btn-outline-secondary btn-sm">
+          🌙
+        </button>
 
-<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <a href="register.html" class="btn btn-primary btn-sm">Sign Up</a>
+        <a href="login.html" class="btn btn-outline-primary btn-sm">Log In</a>
 
-<li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+      </div>
 
-<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-
-<li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-
-<li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
-
-</ul>
-
-</div>
-
-</div>
-
+    </div>
+  </div>
 </nav>
 
-
-
 <!-- HERO -->
-
 <section class="hero">
-
 <div class="container">
 
 <h1 class="display-4">Contact Us</h1>
@@ -133,45 +205,25 @@ pipeline inspection services.
 </p>
 
 </div>
-
 </section>
 
-
-
 <!-- CONTACT SECTION -->
-
 <section class="container py-5">
 
 <div class="row g-5">
 
-
-<!-- CONTACT FORM -->
-
 <div class="col-md-6">
-
 <h3>Send Us a Message</h3>
 
 <form>
-
 <input type="text" class="form-control mb-3" placeholder="Your Name">
-
 <input type="email" class="form-control mb-3" placeholder="Your Email">
-
 <input type="text" class="form-control mb-3" placeholder="Subject">
-
 <textarea class="form-control mb-3" rows="5" placeholder="Your Message"></textarea>
-
-<button class="btn btn-primary">
-Send Message
-</button>
-
+<button class="btn btn-primary">Send Message</button>
 </form>
 
 </div>
-
-
-
-<!-- CONTACT INFO -->
 
 <div class="col-md-6">
 
@@ -183,33 +235,21 @@ services and technical consultations.
 </p>
 
 <p><i class="fa-solid fa-location-dot text-primary"></i> Hyderabad, India</p>
-
 <p><i class="fa-solid fa-phone text-primary"></i> +91 9876543210</p>
-
 <p><i class="fa-solid fa-envelope text-primary"></i> support@pipelineinspect.com</p>
-
 <p><i class="fa-solid fa-clock text-primary"></i> Mon - Fri : 9 AM - 6 PM</p>
 
-
-<!-- MAP -->
-
 <div class="mt-4">
-
 <img src="assets/images/map.jpg" class="img-fluid rounded">
-
 </div>
 
 </div>
-
 
 </div>
 
 </section>
 
-
-
 <!-- CTA -->
-
 <section class="bg-light text-center py-5">
 
 <div class="container">
@@ -229,20 +269,98 @@ View Services
 
 </section>
 
-
-
 <!-- FOOTER -->
+<footer class="footer bg-dark text-white pt-5 pb-3">
+  <div class="container">
 
-<footer class="bg-dark text-white text-center p-3">
+    <div class="row">
 
-<p>© 2026 PipelineInspect | All Rights Reserved</p>
+      <div class="col-md-4 mb-4">
+        <h5 class="fw-bold">PipelineInspect</h5>
+        <p class="small">
+          Advanced pipeline inspection and monitoring solutions for modern industries.
+        </p>
+      </div>
 
+      <div class="col-md-2 mb-4">
+        <h6 class="fw-bold">Quick Links</h6>
+        <ul class="list-unstyled">
+          <li><a href="index.html">Home 1</a></li>
+          <li><a href="home2.html">Home 2</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-2 mb-4">
+        <h6 class="fw-bold">Services</h6>
+        <ul class="list-unstyled">
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-2 mb-4">
+        <h6 class="fw-bold">Extras</h6>
+        <ul class="list-unstyled">
+          <li><a href="coming-soon.html">Coming Soon</a></li>
+          <li><a href="404.html">404 Page</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-2 mb-4">
+        <h6 class="fw-bold">Follow Us</h6>
+        <div class="d-flex gap-3 mt-2">
+          <a href="#" class="footer-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="footer-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="footer-icon"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary">
+
+    <div class="text-center small">
+      © 2026 PipelineInspect | All Rights Reserved
+    </div>
+
+  </div>
 </footer>
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-</body>
+<script>
 
+function loadTheme(){
+let saved = localStorage.getItem("theme");
+
+if(saved){
+document.body.classList.toggle("dark-mode", saved === "dark");
+}else if(window.matchMedia("(prefers-color-scheme: dark)").matches){
+document.body.classList.add("dark-mode");
+}
+}
+
+function toggleTheme(){
+document.body.classList.toggle("dark-mode");
+
+let theme = document.body.classList.contains("dark-mode") ? "dark" : "light";
+localStorage.setItem("theme", theme);
+}
+
+function toggleRTL(){
+if(document.documentElement.dir === "rtl"){
+document.documentElement.dir = "ltr";
+}else{
+document.documentElement.dir = "rtl";
+}
+}
+
+loadTheme();
+
+</script>
+
+</body>
 </html>

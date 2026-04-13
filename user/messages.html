@@ -16,15 +16,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 <style>
 
 /* BODY */
-
 body{
 margin:0;
 font-family:Segoe UI;
-padding-top:90px;
 }
 
 /* BACKGROUND IMAGE */
-
 .bg-image{
 position:fixed;
 top:0;
@@ -35,57 +32,37 @@ object-fit:cover;
 z-index:-1;
 }
 
-
-/* TRANSPARENT NAVBAR */
-
-.transparent-navbar{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-background:transparent;
-padding:15px 0;
-z-index:1000;
-}
-
-
-/* LOGO */
-
-.logo-circle{
-width:45px;
-height:45px;
-border-radius:50%;
-object-fit:cover;
-border:2px solid white;
-background:white;
-padding:3px;
-}
-
-
-/* BRAND TEXT */
-
-.brand-text{
-font-size:20px;
-font-weight:600;
+/* SIDEBAR */
+.sidebar{
+height:100vh;
+background:linear-gradient(180deg,#0d6efd,#0056d2);
 color:white;
+padding-top:30px;
+position:fixed;
+width:230px;
 }
 
-
-/* NAV LINKS */
-
-.nav-link{
-color:white !important;
-margin-left:15px;
-font-weight:500;
+.sidebar a{
+color:white;
+text-decoration:none;
+display:block;
+padding:12px 20px;
+margin:5px 10px;
+border-radius:6px;
 }
 
-.nav-link:hover{
-color:#0d6efd !important;
+.sidebar a:hover{
+background:rgba(255,255,255,0.2);
 }
 
+/* MAIN CONTENT */
+.main-content{
+margin-left:230px;
+padding:30px;
+min-height:100vh;
+}
 
 /* MESSAGE CARD */
-
 .message-card{
 border:none;
 border-radius:10px;
@@ -102,65 +79,32 @@ transform:translateY(-4px);
 
 </head>
 
-
 <body>
 
 <!-- BACKGROUND IMAGE -->
-
 <img src="../assets/images/bg.jpg" class="bg-image">
 
+<!-- SIDEBAR -->
+<div class="sidebar">
 
-<!-- NAVBAR -->
+<h4 class="text-center mb-4">
+<i class="fa-solid fa-user"></i> User Panel
+</h4>
 
-<nav class="navbar navbar-expand-lg transparent-navbar">
-
-<div class="container">
-
-<a class="navbar-brand d-flex align-items-center" href="../index.html">
-
-<img src="../assets/images/logo.png" class="logo-circle me-2">
-
-<span class="brand-text">PipelineInspect</span>
-
-</a>
-
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-<span class="navbar-toggler-icon"></span>
-</button>
-
-<div class="collapse navbar-collapse" id="navMenu">
-
-<ul class="navbar-nav ms-auto">
-
-<li class="nav-item">
-<a class="nav-link" href="dashboard.html">Dashboard</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link active" href="messages.html">Messages</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link btn btn-outline-light px-3 ms-3" href="../index.html">
-Logout
-</a>
-</li>
-
-</ul>
+<a href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+<a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+<a href="orders.html"><i class="fa-solid fa-box"></i> Orders</a>
+<a href="saved.html"><i class="fa-solid fa-heart"></i> Saved Items</a>
+<a href="messages.html"><i class="fa-solid fa-envelope"></i> Messages</a>
+<a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
+<a href="../index.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
 
 </div>
 
-</div>
-
-</nav>
-
-
-
-<div class="container py-5">
-
+<!-- MAIN CONTENT -->
+<div class="main-content">
 
 <!-- PAGE TITLE -->
-
 <h2 class="mb-4 text-white">Your Messages</h2>
 
 <p class="text-light">
@@ -168,164 +112,94 @@ Here you can view important notifications about your pipeline
 inspection services, booking confirmations and system updates.
 </p>
 
-
-
 <!-- MESSAGE LIST -->
-
 <div class="row g-4 mt-3">
 
-
 <!-- MESSAGE 1 -->
-
 <div class="col-md-6">
-
 <div class="card message-card p-3">
-
 <div class="d-flex align-items-center">
-
 <i class="fa-solid fa-file-circle-check fa-2x text-success me-3"></i>
-
 <div>
-
 <h5>Inspection Report Ready</h5>
-
 <p class="mb-1">
 Your pipeline inspection report has been successfully
 generated and is ready for download.
 </p>
-
 <span class="badge bg-success">New</span>
-
 </div>
-
 </div>
-
 </div>
-
 </div>
-
-
 
 <!-- MESSAGE 2 -->
-
 <div class="col-md-6">
-
 <div class="card message-card p-3">
-
 <div class="d-flex align-items-center">
-
 <i class="fa-solid fa-calendar-check fa-2x text-primary me-3"></i>
-
 <div>
-
 <h5>Service Booking Confirmed</h5>
-
 <p class="mb-1">
 Your pipeline inspection service booking has been
 confirmed by our engineering team.
 </p>
-
 <span class="badge bg-primary">Confirmed</span>
-
 </div>
-
 </div>
-
 </div>
-
 </div>
-
-
 
 <!-- MESSAGE 3 -->
-
 <div class="col-md-6">
-
 <div class="card message-card p-3">
-
 <div class="d-flex align-items-center">
-
 <i class="fa-solid fa-bell fa-2x text-warning me-3"></i>
-
 <div>
-
 <h5>System Notification</h5>
-
 <p class="mb-1">
 Scheduled maintenance will occur this weekend.
 Dashboard services may be temporarily unavailable.
 </p>
-
 <span class="badge bg-warning text-dark">Alert</span>
-
 </div>
-
 </div>
-
 </div>
-
 </div>
-
-
 
 <!-- MESSAGE 4 -->
-
 <div class="col-md-6">
-
 <div class="card message-card p-3">
-
 <div class="d-flex align-items-center">
-
 <i class="fa-solid fa-envelope fa-2x text-info me-3"></i>
-
 <div>
-
 <h5>Support Message</h5>
-
 <p class="mb-1">
 Our support team has responded to your inquiry
 regarding pipeline integrity assessment.
 </p>
-
 <span class="badge bg-info">Response</span>
-
+</div>
+</div>
+</div>
 </div>
 
 </div>
-
-</div>
-
-</div>
-
-
-</div>
-
-
 
 <!-- HELP SECTION -->
-
 <div class="mt-5 p-4 bg-light rounded">
-
 <h4>Need Help?</h4>
-
 <p>
 If you have any questions regarding your pipeline inspection
 services or reports, please contact our support team.
 </p>
-
 <a href="../contact.html" class="btn btn-primary">
 Contact Support
 </a>
-
 </div>
 
-
 </div>
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
-
 </html>

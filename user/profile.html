@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>User Profile | PipelineInspect</title>
+<title>User Profile </title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -18,11 +18,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 body{
 margin:0;
 font-family:Segoe UI;
-padding-top:90px;
 }
 
 /* BACKGROUND IMAGE */
-
 .bg-image{
 position:fixed;
 top:0;
@@ -33,9 +31,37 @@ object-fit:cover;
 z-index:-1;
 }
 
+/* SIDEBAR */
+.sidebar{
+height:100vh;
+background:linear-gradient(180deg,#0d6efd,#0056d2);
+color:white;
+padding-top:30px;
+position:fixed;
+width:230px;
+}
+
+.sidebar a{
+color:white;
+text-decoration:none;
+display:block;
+padding:12px 20px;
+margin:5px 10px;
+border-radius:6px;
+}
+
+.sidebar a:hover{
+background:rgba(255,255,255,0.2);
+}
+
+/* MAIN CONTENT (IMPORTANT FIX) */
+.main-content{
+margin-left:230px;
+padding:30px;
+min-height:100vh;
+}
 
 /* NAVBAR */
-
 .transparent-navbar{
 position:absolute;
 top:0;
@@ -48,26 +74,7 @@ padding:15px 0;
 
 /* LOGO */
 
-.logo-circle{
-width:45px;
-height:45px;
-border-radius:50%;
-object-fit:cover;
-border:2px solid white;
-background:white;
-padding:3px;
-}
-
-/* BRAND TEXT */
-
-.brand-text{
-font-size:20px;
-font-weight:600;
-color:white;
-}
-
 /* NAV LINKS */
-
 .nav-link{
 font-weight:500;
 margin-left:10px;
@@ -78,9 +85,7 @@ color:white !important;
 color:#0d6efd !important;
 }
 
-
 /* PROFILE CARD */
-
 .profile-card{
 border:none;
 border-radius:10px;
@@ -88,7 +93,6 @@ box-shadow:0 4px 12px rgba(0,0,0,0.15);
 }
 
 /* PROFILE IMAGE */
-
 .profile-img{
 width:120px;
 height:120px;
@@ -101,25 +105,34 @@ border:4px solid #0d6efd;
 
 </head>
 
-
 <body>
 
-<!-- BACKGROUND IMAGE -->
+<!-- SIDEBAR -->
+<div class="sidebar">
 
+<h4 class="text-center mb-4">
+<i class="fa-solid fa-user"></i> User Panel
+</h4>
+
+<a href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+<a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+<a href="orders.html"><i class="fa-solid fa-box"></i> Orders</a>
+<a href="saved.html"><i class="fa-solid fa-heart"></i> Saved Items</a>
+<a href="messages.html"><i class="fa-solid fa-envelope"></i> Messages</a>
+<a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
+<a href="../index.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+
+</div>
+
+<!-- BACKGROUND -->
 <img src="../assets/images/bg.jpg" class="bg-image">
 
-
 <!-- NAVBAR -->
-
 <nav class="navbar navbar-expand-lg transparent-navbar">
 
 <div class="container">
 
 <a class="navbar-brand d-flex align-items-center" href="../index.html">
-
-<img src="../assets/images/logo.png" class="logo-circle me-2">
-
-<span class="brand-text">PipelineInspect</span>
 
 </a>
 
@@ -128,7 +141,6 @@ border:4px solid #0d6efd;
 </button>
 
 <div class="collapse navbar-collapse" id="navMenu">
-
 <ul class="navbar-nav ms-auto">
 
 <li class="nav-item">
@@ -140,20 +152,18 @@ border:4px solid #0d6efd;
 </li>
 
 <li class="nav-item">
-<a class="nav-link btn btn-outline-light ms-3 px-3" href="../index.html">
-Logout
-</a>
+<a class="nav-link btn btn-outline-light ms-3 px-3" href="../index.html">Logout</a>
 </li>
 
 </ul>
-
 </div>
 
 </div>
 
 </nav>
 
-
+<!-- MAIN CONTENT -->
+<div class="main-content">
 
 <div class="container py-5">
 
@@ -163,14 +173,10 @@ Logout
 Update your personal information and manage your account settings.
 </p>
 
-
 <div class="row g-4">
 
-
 <!-- PROFILE IMAGE -->
-
 <div class="col-md-4">
-
 <div class="card profile-card text-center p-4">
 
 <img src="../assets/images/profile.jpg" class="profile-img mx-auto mb-3">
@@ -184,15 +190,10 @@ Change Photo
 </button>
 
 </div>
-
 </div>
 
-
-
 <!-- PROFILE FORM -->
-
 <div class="col-md-8">
-
 <div class="card profile-card p-4">
 
 <h4 class="mb-3">Personal Information</h4>
@@ -200,7 +201,6 @@ Change Photo
 <form>
 
 <div class="row">
-
 <div class="col-md-6">
 <input class="form-control mb-3" placeholder="Full Name">
 </div>
@@ -208,11 +208,9 @@ Change Photo
 <div class="col-md-6">
 <input class="form-control mb-3" placeholder="Email Address">
 </div>
-
 </div>
 
 <input class="form-control mb-3" placeholder="Phone Number">
-
 <input class="form-control mb-3" placeholder="Company Name">
 
 <textarea class="form-control mb-3" rows="3" placeholder="Address"></textarea>
@@ -224,16 +222,11 @@ Update Profile
 </form>
 
 </div>
-
 </div>
 
-
 </div>
-
-
 
 <!-- ACCOUNT INFO -->
-
 <div class="mt-5 p-4 bg-light rounded">
 
 <h4>Account Information</h4>
@@ -245,24 +238,18 @@ inspection reports and orders.
 </p>
 
 <ul>
-
 <li>Account Type: Client</li>
-
 <li>Member Since: January 2026</li>
-
 <li>Status: Active</li>
-
 </ul>
 
 </div>
 
-
 </div>
 
-
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
-
 </html>
